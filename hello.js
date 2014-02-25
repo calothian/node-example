@@ -4,7 +4,7 @@ var express = require("express");
 var mongo = require("mongodb");
 var monk = require("monk");
 
-var dbUri = process_env.MONGOHQ_URL;
+var dbUri = process.env.MONGOHQ_URL;
 var db = monk(dbUri);
 
 var app = express();

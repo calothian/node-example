@@ -1,0 +1,27 @@
+{
+  "name": "node-example",
+  "version": "0.0.0",
+  "description": "The classic first app",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calothian/node-example.git"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "calothian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calothian/node-example/issues"
+  },
+  "homepage": "https://github.com/calothian/node-example",
+  "dependencies": {
+    "logfmt": "^0.21.0",
+    "express": "^3.4.8"
+  }
+}

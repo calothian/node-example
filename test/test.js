@@ -3,7 +3,7 @@ var express = require('express');
 
 var app = require('../hello.js');
 
-describe('GET /', function()) {
+describe('GET /', function() {
   it('respond with plain text', function(done) {
     request(app)
       .get('/')

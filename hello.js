@@ -4,7 +4,7 @@ var express = require("express");
 var mongo = require("mongodb");
 var monk = require("monk");
 
-var dbUri = process.env.MONGOHQ_URL || 'mongodb://localhost';
+var dbUri = process.env.MONGOHQ_URL || process.env.WERCKER_MONGODB_HOST || 'mongodb://localhost';
 var db = monk(dbUri);
 
 var app = express();

@@ -12,9 +12,7 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  db.driver.admin.listDatabases(function(err, dbs) {
-    res.json(dbs);
-  });
+  res.send('Hello World! Welcome to my sandbox.\n');
 });
 
 app.get('/collections', function(req, res) {
@@ -30,8 +28,13 @@ app.get('/collections/:name', function(req, res) {
   });
 });
 
+// TBD get document by color, or _id
+// TBD Create, Update, Delete operations on documents
+
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
   console.log("Now listening on " + port);
 });
+
+module.exports = app;
 

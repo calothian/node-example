@@ -4,9 +4,11 @@ var express = require("express");
 var mongo = require("mongodb");
 var monk = require("monk");
 
+// TBD fix this to use app.configure()
 var dbUri = process.env.MONGOHQ_URL || 'mongodb://' + process.env.WERCKER_MONGODB_HOST + ':' + process.env.WERCKER_MONGODB_PORT || 'mongodb://localhost';
 
-var db = monk(dbUri);
+console.log("Mongo URI is " + dbUri);
+//var db = monk(dbUri);
 
 var app = express();
 
@@ -17,16 +19,18 @@ app.get('/', function(req, res) {
 });
 
 app.get('/collections', function(req, res) {
-  db.driver.collectionNames(function(err, names) {
-    res.json(names);
-  });
+  //db.driver.collectionNames(function(err, names) {
+  //  res.json(names);
+  //});
+  res.send('Collections here\n');
 });
 
 app.get('/collections/:name', function(req, res) {
-  var collection = db.get(req.params.name);
-  collection.find({}, {limit:20}, function(err, docs) {
-    res.json(docs);
-  });
+  //var collection = db.get(req.params.name);
+  //collection.find({}, {limit:20}, function(err, docs) {
+   // res.json(docs);
+  //});
+  res.send('Collection by name here\n');
 });
 
 // TBD get document by color, or _id
